@@ -1,0 +1,20 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: cc
+  username:
+  password:
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: cc
+  username:
+  password:
+
+assets:
+  adapter: postgresql
+  encoding: unicode
+  database: cc
+  username:
+  password:

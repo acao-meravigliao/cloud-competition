@@ -1,0 +1,25 @@
+/*
+ * Copyright (C) 2017-2017, Daniele Orlandi
+ *
+ * Author:: Daniele Orlandi <daniele@orlandi.com>
+ *
+ * License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
+ *
+ */
+
+Ext.define('Extgui.Cc.Plugin', {
+  extend: 'Extgui.Plugin',
+
+  css: '<%=stylesheet_path 'extgui/cc.css'%>',
+
+  init: function() {
+    var me = this;
+
+    me.callParent(arguments);
+
+    me.control({
+      'viewport > tabpanel > panel[klass=Extgui.Cc.Aircraft.IndexPanel] > panel > toolbar button[name=new]':
+       { click: function(el, record) { me.openUri('ygg/cc/aircrafts/new'); }, },
+    });
+  },
+});

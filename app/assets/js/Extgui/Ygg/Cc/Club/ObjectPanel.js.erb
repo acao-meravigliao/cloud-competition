@@ -1,0 +1,54 @@
+/*
+ * Copyright (C) 2008-2017, Daniele Orlandi
+ *
+ * Author:: Daniele Orlandi <daniele@orlandi.com>
+ *
+ * License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
+ *
+ */
+
+Ext.define('Extgui.Cc.Club.ObjectPanel', {
+  extend: 'Extgui.object.panel.Base',
+  requires: [
+    'Extgui.Cc.Plugin',
+    'Extgui.Cc.Club',
+  ],
+  extguiObject: 'Extgui.Cc.Club',
+
+  requestDeletionButton: true,
+
+  tabs: {
+    title: i18n('extgui.cc.club.object_panel.object_tab'),
+    padding: 10,
+    layout: 'anchor',
+
+    items: [
+     {
+      xtype: 'textfield',
+      name: 'name',
+      width: 400,
+     },
+     {
+      xtype: 'textfield',
+      name: 'symbol',
+     },
+     {
+      xtype: 'textfield',
+      name: 'website_url',
+      anchor: '100%',
+     },
+    ],
+  },
+
+  nav: [
+  ],
+
+  actions: [
+  ],
+
+//  initComponent: function() {
+//    var me = this;
+//
+//    me.callParent(arguments);
+//  },
+});

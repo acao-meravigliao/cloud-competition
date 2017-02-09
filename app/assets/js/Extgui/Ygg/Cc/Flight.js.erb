@@ -1,0 +1,26 @@
+/*
+ * Copyright (C) 2017-2017, Daniele Orlandi
+ *
+ * Author:: Daniele Orlandi <daniele@orlandi.com>
+ *
+ * License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
+ *
+ */
+
+Ext.define('Extgui.Cc.Flight', {
+  extend: 'Extgui.object.Base',
+  requires: [
+    'Extgui.Cc.Plugin',
+    'Cc.Flight',
+  ],
+  singleton: true,
+
+  humanIdField: 'id',
+//  scalableIcon: '<%=image_path 'email/mailbox.svg' %>',
+
+  modelName: 'Cc.Flight',
+
+  subTpl: [
+    '<span class="name">{id}</span>',
+  ],
+});

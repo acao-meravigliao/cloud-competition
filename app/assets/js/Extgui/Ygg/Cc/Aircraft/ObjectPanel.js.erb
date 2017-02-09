@@ -1,0 +1,61 @@
+/*
+ * Copyright (C) 2008-2017, Daniele Orlandi
+ *
+ * Author:: Daniele Orlandi <daniele@orlandi.com>
+ *
+ * License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
+ *
+ */
+
+Ext.define('Extgui.Cc.Aircraft.ObjectPanel', {
+  extend: 'Extgui.object.panel.Base',
+  requires: [
+    'Extgui.Cc.Plugin',
+    'Extgui.Cc.Aircraft',
+    'Extgui.Cc.AircraftType',
+    'Extgui.Cc.AircraftType.ReferenceField',
+  ],
+  extguiObject: 'Extgui.Cc.Aircraft',
+
+//  tabTitleTpl: '{local}@{domain.name}',
+//  panelTitleTpl: '<h1><span class="name">Cc Aircraft</span><span class="value">{local}@{domain.name}</span></h1>',
+
+  requestDeletionButton: true,
+
+  tabs: {
+    title: i18n('extgui.cc.aircraft.object_panel.object_tab'),
+    padding: 10,
+    layout: 'anchor',
+    items: [
+     {
+      xtype: 'textfield',
+      name: 'registration',
+      allowBlank: false,
+     },
+     {
+      xtype: 'cc_aircraft_type',
+      name: 'aircraft_type_id',
+     },
+    ],
+  },
+
+  nav: [
+//   {
+//    text: 'Agreement',
+//    dataIndex: 'agreement',
+//   },
+//   {
+//    text: 'Domain',
+//    dataIndex: 'domain',
+//   },
+  ],
+
+  actions: [
+  ],
+
+//  initComponent: function() {
+//    var me = this;
+//
+//    me.callParent(arguments);
+//  },
+});
