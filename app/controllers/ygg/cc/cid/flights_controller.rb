@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 # coding: utf-8
@@ -23,7 +24,7 @@ class FlightsController < ApplicationController
         @state[:flight_id] = params[:flight_id]
 
         @flight = Flight.find(@state[:flight_id])
-        if @flight.championships.include?(Championship.find_by_symbol(:cid_2011))
+        if @flight.championships.include?(Competition.find_by_symbol(:cid_2011))
           flash[:error] = "Il volo è già stato inviato al CID"
           throw :done
         end
@@ -75,8 +76,8 @@ class FlightsController < ApplicationController
           @state[:state] = :done
 
           @flight = Flight.find(@state[:flight_id])
-          @flight.championship_flights << Championship::Flight::Cid2011.new(
-            :championship => Championship.find_by_symbol(:cid_2011),
+          @flight.championship_flights << Competition::Flight::Cid2011.new(
+            :championship => Competition.find_by_symbol(:cid_2011),
             :status => :pending,
             :cid_ranking => @state[:cid_ranking],
             :distance => @state[:cid_distance],
@@ -94,7 +95,7 @@ class FlightsController < ApplicationController
     # Prepare wizard data after state change
     case @state[:state]
     when :championship_data
-      championship = Championship.find_by_symbol(:cid_2011)
+      championship = Competition.find_by_symbol(:cid_2011)
       cp =  auth_person.pilot.championship_pilots.find_by_championship_id(championship.id)
 
       if cp
@@ -120,5 +121,6 @@ class FlightsController < ApplicationController
 
 end
 
+end
 end
 end

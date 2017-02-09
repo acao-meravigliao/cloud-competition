@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class Ranking::RestController < Ygg::Hel::RestController
@@ -39,4 +40,5 @@ class Ranking::RestController < Ygg::Hel::RestController
   end
 end
 
+end
 end

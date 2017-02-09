@@ -6,26 +6,40 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class Aircraft::RestController < Ygg::Hel::RestController
 
   ar_controller_for Aircraft
 
+  view :grid do
+    empty!
+    attribute(:id) { show! }
+    attribute(:uuid) { show! }
+    attribute(:registration) { show! }
+    attribute(:aircraft_type) do
+      show!
+      empty!
+      attribute(:id) { show! }
+      attribute(:name) { show! }
+    end
+  end
+
   view :combo do
     empty!
     attribute(:id) { show! }
     attribute(:registration) { show! }
     attribute(:plane_type) do
-      include!
+      show!
       empty!
       attribute(:id) { show! }
-      attribute(:configurations) { include! }
+      attribute(:configurations) { show! }
       attribute(:name) { show! }
     end
   end
 
-  filter :combo, lambda { |r| apply_search_to_relation(r, [ 'registration' ]) }
+#  filter :combo, lambda { |r| apply_search_to_relation(r, [ 'registration' ]) }
 
   def stats_by_pilot
     find_target
@@ -50,4 +64,5 @@ class Aircraft::RestController < Ygg::Hel::RestController
   end
 end
 
+end
 end

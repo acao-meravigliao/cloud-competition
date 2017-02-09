@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 # coding: utf-8
@@ -42,10 +43,10 @@ class RegistrationController < ApplicationController
             :club => Club.find_by_symbol(:acao)
           }
 
-          csvva = Championship.find_by_symbol(:csvva_2011)
+          csvva = Competition.find_by_symbol(:csvva_2011)
 
           cp = pilot.championship_pilots.where(:championship_id => csvva.id).first ||
-                 Championship::Pilot::Csvva2011.new(:pilot => pilot, :championship => csvva)
+                 Competition::Pilot::Csvva2011.new(:pilot => pilot, :championship => csvva)
           cp.csvva_pilot_level = @state[:csvva_category]
           cp.save!
 
@@ -108,5 +109,6 @@ class RegistrationController < ApplicationController
   end
 end
 
+end
 end
 end

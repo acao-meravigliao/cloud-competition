@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 # coding: utf-8
@@ -62,10 +63,10 @@ class RegistrationController < ApplicationController
               :fai_card => @state[:fai_card],
             }
 
-            cid = Championship.find_by_symbol(:cid_2011)
+            cid = Competition.find_by_symbol(:cid_2011)
 
             cp = pilot.championship_pilots.where(:championship_id => cid.id).first ||
-                   Championship::Pilot::Cid2011.new(:pilot => pilot, :championship => cid)
+                   Competition::Pilot::Cid2011.new(:pilot => pilot, :championship => cid)
             cp.cid_category = @state[:cid_category]
             cp.save!
 
@@ -131,5 +132,6 @@ class RegistrationController < ApplicationController
   end
 end
 
+end
 end
 end

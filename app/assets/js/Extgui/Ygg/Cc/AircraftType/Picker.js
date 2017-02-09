@@ -7,16 +7,16 @@
  *
  */
 
-Ext.define('Extgui.Cc.AircraftType.Picker', {
+Ext.define('Extgui.Ygg.Cc.AircraftType.Picker', {
   extend: 'Extgui.object.Picker',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Extgui.Cc.AircraftType',
-    'Extgui.Cc.AircraftType.View',
+    'Extgui.Ygg.Cc.Plugin',
+    'Extgui.Ygg.Cc.AircraftType',
+    'Extgui.Ygg.Cc.AircraftType.View',
   ],
   alias: 'widget.cc_aircraft_type_picker',
 
-  extguiObject: 'Extgui.Cc.AircraftType',
+  extguiObject: 'Extgui.Ygg.Cc.AircraftType',
 
   searchIn: [ 'name' ],
   defaultSorter: 0,

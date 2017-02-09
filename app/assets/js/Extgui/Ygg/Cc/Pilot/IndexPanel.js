@@ -7,16 +7,16 @@
  *
  */
 
-Ext.define('Extgui.Cc.Pilot.IndexPanel', {
+Ext.define('Extgui.Ygg.Cc.Pilot.IndexPanel', {
   extend: 'Extgui.object.index.GridPanelBase',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Cc.Pilot',
-    'Extgui.Cc.Club',
+    'Extgui.Ygg.Cc.Plugin',
+    'Ygg.Cc.Pilot',
+    'Extgui.Ygg.Cc.Club',
     'Extgui.Ygg.Core.Person',
   ],
 
-  model: 'Cc.Pilot',
+  model: 'Ygg.Cc.Pilot',
   columns: [
    {
     xtype: 'stringtemplatecolumn',

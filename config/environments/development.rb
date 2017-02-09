@@ -55,7 +55,9 @@ Rails.application.configure do
 
   config.extgui.compile_trees << 'CcAdmin'
 
+  config.rails_amqp.url = 'amqp://agent@lino.acao.it'
+
   config.extgui.ext_core_js = 'ext/ext-dev.js'
-  config.extgui.hel_host = 'http://[::1]:3000'
+#  config.extgui.hel_host = 'http://[::1]:3000'
   config.extgui.ws_uri = lambda { "ws://#{request.host}:3000/ws" }
 end

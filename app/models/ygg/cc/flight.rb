@@ -6,38 +6,40 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class Flight < Ygg::PublicModel
-  self.table_name 'cc_flights'
+  self.table_name = 'cc_flights'
 
   belongs_to :pilot,
-             class_name: 'Cc::Pilot'
+             class_name: 'Ygg::Cc::Pilot'
   validates_presence_of :pilot
 
   belongs_to :passenger,
              class_name: 'Ygg::Core::Person'
 
   belongs_to :aircraft,
-             class_name: 'Cc::Aircraft'
+             class_name: 'Ygg::Cc::Aircraft'
   validates_presence_of :aircraft_id
 
   belongs_to :aircraft_type_configuration,
-             class_name: 'Cc::AircraftType::Configuration'
+             class_name: 'Ygg::Cc::AircraftType::Configuration'
 
   has_many :photos,
-           class_name: 'Cc::FlightPhoto',
+           class_name: 'Ygg::Cc::FlightPhoto',
            dependent: :destroy
 
   has_many :competition_flights,
-           class_name: 'Cc::Competition::Flight',
+           class_name: 'Ygg::Cc::Competition::Flight',
            dependent: :destroy,
            embedded: true
+
   accepts_nested_attributes_for :competition_flights, allow_destroy: true
 
   has_many :competitions,
-           through: :competition_flights,
-           uniq: true
+           through: :competition_flights
+#           uniq: true
 
   def competition_flight(symbol)
     competition_flights.joins(:competition).where('competitions.symbol' => symbol).first
@@ -140,5 +142,5 @@ class Flight < Ygg::PublicModel
 
 end
 
-
+end
 end

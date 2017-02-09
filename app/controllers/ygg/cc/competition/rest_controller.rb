@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class Competition::RestController < Ygg::Hel::RestController
@@ -14,4 +15,5 @@ class Competition::RestController < Ygg::Hel::RestController
 
 end
 
+end
 end

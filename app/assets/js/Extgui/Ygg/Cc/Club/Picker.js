@@ -7,16 +7,16 @@
  *
  */
 
-Ext.define('Extgui.Cc.Club.Picker', {
+Ext.define('Extgui.Ygg.Cc.Club.Picker', {
   extend: 'Extgui.object.Picker',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Extgui.Cc.Club',
-    'Extgui.Cc.Club.View',
+    'Extgui.Ygg.Cc.Plugin',
+    'Extgui.Ygg.Cc.Club',
+    'Extgui.Ygg.Cc.Club.View',
   ],
   alias: 'widget.cc_club_picker',
 
-  extguiObject: 'Extgui.Cc.Club',
+  extguiObject: 'Extgui.Ygg.Cc.Club',
 
   searchIn: [ 'name', 'symbol' ],
   defaultSorter: 0,

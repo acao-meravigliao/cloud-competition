@@ -7,12 +7,12 @@
  *
  */
 
-Ext.define('Extgui.Cc.Club.View', {
+Ext.define('Extgui.Ygg.Cc.Club.View', {
   extend: 'Extgui.object.View',
   requires: [
-    'Extgui.Cc.Club',
+    'Extgui.Ygg.Cc.Club',
   ],
   alias: 'widget.cc_club_view',
 
-  extguiObject: 'Extgui.Cc.Club',
+  extguiObject: 'Extgui.Ygg.Cc.Club',
 });

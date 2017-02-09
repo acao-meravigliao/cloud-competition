@@ -6,13 +6,14 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class Competition < Ygg::PublicModel
   self.table_name = 'cc_competitions'
 
   has_many :competition_pilots,
-           class_name: 'Cc::Competition::Pilot'
+           class_name: 'Ygg::Cc::Competition::Pilot'
 
   has_many :pilots,
            through: :competition_pilots
@@ -20,7 +21,7 @@ class Competition < Ygg::PublicModel
   has_many :rankings
 
   has_many :competition_flights,
-           class_name: 'Cc::Competition::Flight',
+           class_name: 'Ygg::Cc::Competition::Flight',
            dependent: :destroy,
            embedded: true
 
@@ -33,10 +34,10 @@ class Competition < Ygg::PublicModel
     self.inheritance_column = :sti_type
 
     belongs_to :competition,
-               class_name: 'Cc::Competition'
+               class_name: 'Ygg::Cc::Competition'
 
     belongs_to :flight,
-               class_name: 'Cc::Flight'
+               class_name: 'Ygg::Cc::Flight'
 
     validates_presence_of :competition, :flight
 
@@ -191,10 +192,10 @@ class Competition < Ygg::PublicModel
     self.inheritance_column = :sti_type
 
     belongs_to :pilot,
-               class_name: 'Cc::Pilot'
+               class_name: 'Ygg::Cc::Pilot'
 
     belongs_to :competition,
-               class_name: 'Cc::Competition'
+               class_name: 'Ygg::Cc::Competition'
 
     validates_presence_of :pilot, :competition
 
@@ -212,4 +213,5 @@ class Competition < Ygg::PublicModel
   end
 end
 
+end
 end

@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class Tag < Ygg::PublicModel
@@ -17,10 +18,11 @@ class Tag < Ygg::PublicModel
            through: :flight_tags
 
   belongs_to :group,
-             class_name: 'Cc::TagGroup'
+             class_name: 'Ygg::Cc::TagGroup'
 
   belongs_to :depends_on_competition,
-             class_name: 'Cc::Competition'
+             class_name: 'Ygg::Cc::Competition'
 end
 
+end
 end

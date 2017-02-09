@@ -7,15 +7,15 @@
  *
  */
 
-Ext.define('Extgui.Cc.AircraftType.ReferenceField', {
+Ext.define('Extgui.Ygg.Cc.AircraftType.ReferenceField', {
   extend: 'Extgui.form.field.ReferenceField',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Extgui.Cc.AircraftType',
-    'Extgui.Cc.AircraftType.Picker',
+    'Extgui.Ygg.Cc.Plugin',
+    'Extgui.Ygg.Cc.AircraftType',
+    'Extgui.Ygg.Cc.AircraftType.Picker',
   ],
   alias: 'widget.cc_aircraft_type',
 
-  extguiObject: 'Extgui.Cc.AircraftType',
-  pickerClass: 'Extgui.Cc.AircraftType.Picker',
+  extguiObject: 'Extgui.Ygg.Cc.AircraftType',
+  pickerClass: 'Extgui.Ygg.Cc.AircraftType.Picker',
 });

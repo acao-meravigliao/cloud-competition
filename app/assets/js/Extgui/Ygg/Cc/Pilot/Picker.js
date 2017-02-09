@@ -7,16 +7,16 @@
  *
  */
 
-Ext.define('Extgui.Cc.Pilot.Picker', {
+Ext.define('Extgui.Ygg.Cc.Pilot.Picker', {
   extend: 'Extgui.object.Picker',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Extgui.Cc.Pilot',
-    'Extgui.Cc.Pilot.View',
+    'Extgui.Ygg.Cc.Plugin',
+    'Extgui.Ygg.Cc.Pilot',
+    'Extgui.Ygg.Cc.Pilot.View',
   ],
   alias: 'widget.cc_pilot_picker',
 
-  extguiObject: 'Extgui.Cc.Pilot',
+  extguiObject: 'Extgui.Ygg.Cc.Pilot',
 
   searchIn: [ 'person.first_name', 'person.last_name' ],
   defaultSorter: 0,

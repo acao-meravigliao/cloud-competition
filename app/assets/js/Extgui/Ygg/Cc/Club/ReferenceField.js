@@ -7,15 +7,15 @@
  *
  */
 
-Ext.define('Extgui.Cc.Club.ReferenceField', {
+Ext.define('Extgui.Ygg.Cc.Club.ReferenceField', {
   extend: 'Extgui.form.field.ReferenceField',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Extgui.Cc.Club',
-    'Extgui.Cc.Club.Picker',
+    'Extgui.Ygg.Cc.Plugin',
+    'Extgui.Ygg.Cc.Club',
+    'Extgui.Ygg.Cc.Club.Picker',
   ],
   alias: 'widget.cc_club',
 
-  extguiObject: 'Extgui.Cc.Club',
-  pickerClass: 'Extgui.Cc.Club.Picker',
+  extguiObject: 'Extgui.Ygg.Cc.Club',
+  pickerClass: 'Extgui.Ygg.Cc.Club.Picker',
 });

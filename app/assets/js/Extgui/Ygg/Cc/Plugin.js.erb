@@ -7,7 +7,7 @@
  *
  */
 
-Ext.define('Extgui.Cc.Plugin', {
+Ext.define('Extgui.Ygg.Cc.Plugin', {
   extend: 'Extgui.Plugin',
 
   css: '<%=stylesheet_path 'extgui/cc.css'%>',
@@ -18,8 +18,8 @@ Ext.define('Extgui.Cc.Plugin', {
     me.callParent(arguments);
 
     me.control({
-      'viewport > tabpanel > panel[klass=Extgui.Cc.Aircraft.IndexPanel] > panel > toolbar button[name=new]':
-       { click: function(el, record) { me.openUri('ygg/cc/aircrafts/new'); }, },
+      'viewport > tabpanel > panel[klass=Extgui.Ygg.Cc.Aircraft.IndexPanel] > panel > toolbar button[name=new]':
+       { click: function(el, record) { me.openUri('model/ygg/cc/aircrafts/new'); }, },
     });
   },
 });

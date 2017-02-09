@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class AlpthermHistoryEntryController < ApplicationController
@@ -16,4 +17,5 @@ class AlpthermHistoryEntryController < ApplicationController
   end
 end
 
+end
 end

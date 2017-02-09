@@ -7,14 +7,14 @@
  *
  */
 
-Ext.define('Extgui.Cc.AircraftType.IndexPanel', {
+Ext.define('Extgui.Ygg.Cc.AircraftType.IndexPanel', {
   extend: 'Extgui.object.index.GridPanelBase',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Cc.AircraftType',
+    'Extgui.Ygg.Cc.Plugin',
+    'Ygg.Cc.AircraftType',
   ],
 
-  model: 'Cc.AircraftType',
+  model: 'Ygg.Cc.AircraftType',
 
   storeConfig: {
     sorters: [

@@ -7,10 +7,10 @@
  *
  */
 
-Ext.define('AcaoDashboard.DashboardCard', {
+Ext.define('CcAdmin.DashboardCard', {
   extend: 'Ext.panel.Panel',
   requires: [
-    'Extgui.Core.Task.Tree',
+    'Extgui.Ygg.Core.Task.Tree',
   ],
   layout: 'border',
   title: 'DashBoard',
@@ -23,30 +23,24 @@ Ext.define('AcaoDashboard.DashboardCard', {
     var buttons = [];
     var widgets = [];
 
-//    if (superuser || Extgui.app.hasClassCapa('Ygg::Core::Taask', 'monitor')) {
-//      widgets.push(
-//       {
-//        xtype: 'core_task_tree',
-//        showAllTargets: true,
-//        expanded: false,
-//        flex: 1,
-//       }
-//      );
-//    }
-
-    buttons.push(
-     {
-      text: 'Radar',
-      name: 'radar',
-     }
-    );
-
-    buttons.push(
-     {
-      text: 'Meteo',
-      name: 'meteo',
-     }
-    );
+//    buttons.push(
+//     {
+//      text: '',
+//      name: '',
+//     },
+//     {
+//      text: '',
+//      name: '',
+//     },
+//     {
+//      text: '',
+//      name: '',
+//     },
+//     {
+//      text: '',
+//      name: '',
+//     },
+//    );
 
 
     me.items = [
@@ -67,14 +61,6 @@ Ext.define('AcaoDashboard.DashboardCard', {
       region: 'center',
       layout: {
         type: 'column',
-  //      columns: 4,
-  //      tableAttrs: {
-  //        style: {
-  //          width: '100%',
-  //          height: '100%',
-  //          'text-align': 'center'
-  //        }
-  //      }
       },
       defaultType: 'button',
       defaults: {
@@ -101,8 +87,6 @@ Ext.define('AcaoDashboard.DashboardCard', {
         me.fireEvent('openuri', 'acao_dashboard/meteo');
       });
     }
-
-
   },
 });
 

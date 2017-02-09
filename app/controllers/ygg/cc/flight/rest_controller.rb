@@ -6,29 +6,59 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
-require 'flickraw_vihai'
+#require 'flickraw_vihai'
 
 class Flight::RestController < Ygg::Hel::RestController
 
   ar_controller_for Flight
 
-  view :edit do
+  view :grid do
+    empty!
+    attribute(:id) { show! }
+    attribute(:uuid) { show! }
+    attribute(:takeoff_time) { show! }
+    attribute(:landing_time) { show! }
+
     attribute :pilot do
-      include!
+      show!
       attribute :person do
-        include!
+        show!
       end
     end
 
-    attribute :plane do
-      include!
-      attribute :plane_type do
-        include!
+    attribute :aircraft do
+      show!
+      attribute :aircraft_type do
+        show!
+      end
+    end
+
+    attribute :aircraft_type_configuration do
+      show!
+      attribute :aircraft_type_configuration do
+        show!
       end
     end
   end
+
+#  view :edit do
+#    attribute :pilot do
+#      show!
+#      attribute :person do
+#        show!
+#      end
+#    end
+#
+#    attribute :aircraft do
+#      show!
+#      attribute :aircraft_type do
+#        show!
+#      end
+#    end
+#  end
 
   def flight_search_conditions
     conditions = {}
@@ -104,12 +134,12 @@ class Flight::RestController < Ygg::Hel::RestController
         fres = @req[:flight]
         fres.symbolize_keys!
 
-        pres = @req[:plane]
+        pres = @req[:aircraft]
         if pres
           pres.symbolize_keys!
-          plane = Plane.create(:registration => pres[:registration],
-                               :plane_type => PlaneType.find(pres[:plane_type_id]))
-          fres[:plane_id] = plane.id
+          aircraft = Plane.create(:registration => pres[:registration],
+                               :aircraft_type => PlaneType.find(pres[:aircraft_type_id]))
+          fres[:aircraft_id] = aircraft.id
         end
 
         igc_tmp_file = IgcTmpFile.find(@req[:igc_tmp_file_id])
@@ -121,8 +151,8 @@ class Flight::RestController < Ygg::Hel::RestController
         @flight.update_from_igcfile(igc_file, igc_tmp_file.original_filename)
         @flight.attributes = {
           :pilot => Pilot.find(fres[:pilot_id]),
-          :plane => Plane.find(fres[:plane_id]),
-          :plane_type_configuration_id => fres[:plane_type_configuration_id],
+          :aircraft => Plane.find(fres[:aircraft_id]),
+          :aircraft_type_configuration_id => fres[:aircraft_type_configuration_id],
           :private => false,
           :notes_public => fres[:notes_public]
         }
@@ -136,8 +166,8 @@ class Flight::RestController < Ygg::Hel::RestController
           cf.symbolize_keys!
 
           case cf[:_type]
-          when 'Championship::Flight::Cid2011'
-            cp = @flight.pilot.championship_pilots.where(:championship_id => Championship.find_by_symbol(:cid_2011)).first
+          when 'Competition::Flight::Cid2011'
+            cp = @flight.pilot.championship_pilots.where(:championship_id => Competition.find_by_symbol(:cid_2011)).first
             if !cp.cid_category
               ranking = nil
             elsif cp.cid_category.to_sym == :prom
@@ -146,8 +176,8 @@ class Flight::RestController < Ygg::Hel::RestController
               ranking = cf[:cid_ranking].to_sym
             end
 
-            @flight.championship_flights << (a=Championship::Flight::Cid2011.new(
-              :championship => Championship.find_by_symbol(:cid_2011),
+            @flight.championship_flights << (a=Competition::Flight::Cid2011.new(
+              :championship => Competition.find_by_symbol(:cid_2011),
               :flight => @flight, # Workaround for validations
               :status => :pending,
               :cid_ranking => ranking,
@@ -156,9 +186,9 @@ class Flight::RestController < Ygg::Hel::RestController
               :task_type => cf[:task_type].to_sym,
               ))
 
-          when 'Championship::Flight::Csvva2011'
-            @flight.championship_flights << Championship::Flight::Csvva2011.new(
-              :championship => Championship.find_by_symbol(:csvva_2011),
+          when 'Competition::Flight::Csvva2011'
+            @flight.championship_flights << Competition::Flight::Csvva2011.new(
+              :championship => Competition.find_by_symbol(:csvva_2011),
               :flight => @flight, # Workaround for validations
               :status => :pending,
               :distance => cf[:distance],
@@ -336,4 +366,5 @@ class Flight::RestController < Ygg::Hel::RestController
   end
 end
 
+end
 end

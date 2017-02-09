@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class Ranking < Ygg::PublicModel
@@ -15,20 +16,20 @@ class Ranking < Ygg::PublicModel
            through: :standings
 
   has_many :standings,
-           class_name: 'Cc::Ranking::Standing'
+           class_name: 'Ygg::Cc::Ranking::Standing'
 
   has_many :sorted_standings,
-           class_name: 'Cc::Ranking::Standing',
-           order: 'value DESC, id ASC',
-           conditions: 'value IS NOT NULL'
+           class_name: 'Ygg::Cc::Ranking::Standing'
+#           order: 'value DESC, id ASC',
+#           conditions: 'value IS NOT NULL'
 
   has_many :club_standings,
-           class_name: 'Cc::Ranking::ClubStanding'
+           class_name: 'Ygg::Cc::Ranking::ClubStanding'
 
   has_many :sorted_club_standings,
-           class_name: 'Cc::Ranking::ClubStanding',
-           order: 'value DESC, id ASC',
-           conditions: 'value IS NOT NULL'
+           class_name: 'Ygg::Cc::Ranking::ClubStanding'
+#           order: 'value DESC, id ASC',
+#           conditions: 'value IS NOT NULL'
 
   belongs_to :competitions
 
@@ -36,20 +37,20 @@ class Ranking < Ygg::PublicModel
     self.table_name = 'cc_ranking_groups'
 
     has_many :rankins,
-             class_name: 'Cc::Ranking'
+             class_name: 'Ygg::Cc::Ranking'
   end
 
   class Member < Ygg::BasicModel
     self.table_name = 'cc_ranking_members'
 
     belongs_to :ranking,
-               class_name: 'Cc::Ranking'
+               class_name: 'Ygg::Cc::Ranking'
 
     belongs_to :pilot,
-               class_name: 'Cc::Pilot'
+               class_name: 'Ygg::Cc::Pilot'
 
 #    has_many :history_entries,
-#             class_name: 'Cc::Ranking::HistoryEntry'
+#             class_name: 'Ygg::Cc::Ranking::HistoryEntry'
 
     serialize :data, JSON
   end
@@ -58,16 +59,16 @@ class Ranking < Ygg::PublicModel
     self.table_name = 'cc_ranking_standings'
 
     belongs_to :ranking,
-               class_name: 'Cc::Ranking'
+               class_name: 'Ygg::Cc::Ranking'
 
     belongs_to :pilot,
-               class_name: 'Cc::Pilot'
+               class_name: 'Ygg::Cc::Pilot'
 
     belongs_to :flight,
-               class_name: 'Cc::Flight'
+               class_name: 'Ygg::Cc::Flight'
 
     has_many :history_entries,
-             class_name: 'Cc::Ranking::Standing::HistoryEntry'
+             class_name: 'Ygg::Cc::Ranking::Standing::HistoryEntry'
 
     serialize :data, JSON
 
@@ -85,13 +86,13 @@ class Ranking < Ygg::PublicModel
     self.table_name = 'cc_ranking_club_standings'
 
     belongs_to :ranking,
-               class_name: 'Cc::Ranking'
+               class_name: 'Ygg::Cc::Ranking'
 
     belongs_to :club,
-               class_name: 'Cc::Club'
+               class_name: 'Ygg::Cc::Club'
 
     has_many :history_entries,
-             class_name: 'Cc::Ranking::ClubStanding::HistoryEntry'
+             class_name: 'Ygg::Cc::Ranking::ClubStanding::HistoryEntry'
 
     serialize :data, JSON
 
@@ -99,13 +100,12 @@ class Ranking < Ygg::PublicModel
       self.table_name = 'cc_ranking_club_standing_history_entries'
 
       belongs_to :club_standing,
-                 class_name: 'Cc::Ranking::ClubStanding'
+                 class_name: 'Ygg::Cc::Ranking::ClubStanding'
 
       serialize :data, JSON
     end
   end
-
-
 end
 
+end
 end

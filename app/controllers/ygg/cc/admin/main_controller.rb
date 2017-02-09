@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 module Admin
 
@@ -17,4 +18,4 @@ end
 
 end
 end
-
+end

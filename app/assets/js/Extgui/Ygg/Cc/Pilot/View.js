@@ -7,12 +7,12 @@
  *
  */
 
-Ext.define('Extgui.Cc.Pilot.View', {
+Ext.define('Extgui.Ygg.Cc.Pilot.View', {
   extend: 'Extgui.object.View',
   requires: [
-    'Extgui.Cc.Pilot',
+    'Extgui.Ygg.Cc.Pilot',
   ],
   alias: 'widget.cc_pilot_view',
 
-  extguiObject: 'Extgui.Cc.Pilot',
+  extguiObject: 'Extgui.Ygg.Cc.Pilot',
 });

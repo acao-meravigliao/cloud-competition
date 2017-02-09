@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 # Filters added to this controller apply to all controllers in the application.
@@ -72,4 +73,5 @@ class ApplicationController < ActionController::Base
   end
 end
 
+end
 end

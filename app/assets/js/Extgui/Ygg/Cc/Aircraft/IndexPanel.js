@@ -7,15 +7,15 @@
  *
  */
 
-Ext.define('Extgui.Cc.Aircraft.IndexPanel', {
+Ext.define('Extgui.Ygg.Cc.Aircraft.IndexPanel', {
   extend: 'Extgui.object.index.GridPanelBase',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Cc.Aircraft',
-    'Cc.AircraftType',
+    'Extgui.Ygg.Cc.Plugin',
+    'Ygg.Cc.Aircraft',
+    'Ygg.Cc.AircraftType',
   ],
 
-  model: 'Cc.Aircraft',
+  model: 'Ygg.Cc.Aircraft',
   columns: [
    {
     dataIndex: 'registration',

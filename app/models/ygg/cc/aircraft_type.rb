@@ -6,15 +6,16 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
-class AircraftType < Ygg::BasicModel
+class AircraftType < Ygg::PublicModel
   self.table_name = 'cc_aircraft_types'
 
   has_many :aircrafts
 
   has_many :configurations,
-           class_name: 'Cc::AircraftType::Configuration'
+           class_name: 'Ygg::Cc::AircraftType::Configuration'
 
   accepts_nested_attributes_for :configurations
 
@@ -39,4 +40,5 @@ class AircraftType < Ygg::BasicModel
   end
 end
 
+end
 end

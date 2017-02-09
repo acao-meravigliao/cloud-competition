@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class AircraftType::RestController < Ygg::Hel::RestController
@@ -17,7 +18,7 @@ class AircraftType::RestController < Ygg::Hel::RestController
 #    attribute(:id) { show! }
 #    attribute(:name) { show! }
 #    attribute(:configurations) do
-#      include!
+#      show!
 #    end
 #  end
 #
@@ -25,4 +26,5 @@ class AircraftType::RestController < Ygg::Hel::RestController
 
 end
 
+end
 end

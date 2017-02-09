@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class IgcFile < File
@@ -346,5 +347,5 @@ protected
   end
 end
 
-
+end
 end

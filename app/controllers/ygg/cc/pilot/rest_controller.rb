@@ -6,51 +6,61 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
-
 
 class Pilot::RestController < Ygg::Hel::RestController
 
   ar_controller_for Pilot
 
-  view :edit do
+  view :grid do
     attribute(:person) do
-      include!
+      show!
+    end
+
+    attribute(:club) do
+      show!
     end
   end
 
-  view :combo do
-    empty!
-    attribute(:id) { show! }
-    attribute(:person) do
-      include!
-      empty!
-      attribute(:name) { show! }
-    end
-  end
-
-  view :combo_nf do
-    empty!
-    attribute(:id) { show! }
-    attribute(:person) do
-      include!
-      empty!
-      attribute(:name) { show! }
-    end
-    attribute(:championship_pilots) do
-       show!
-       attribute(:championship) do
-         include!
-         empty!
-         attribute(:name) { show! }
-       end
-       attribute(:cid_category) { show! }
-    end
-  end
-
-  filter :combo, lambda { |r|
-    apply_search_to_relation(r, [ 'person.first_name', 'person.last_name' ])
-  }
+#  view :edit do
+#    attribute(:person) do
+#      show!
+#    end
+#  end
+#
+#  view :combo do
+#    empty!
+#    attribute(:id) { show! }
+#    attribute(:person) do
+#      show!
+#      empty!
+#      attribute(:name) { show! }
+#    end
+#  end
+#
+#  view :combo_nf do
+#    empty!
+#    attribute(:id) { show! }
+#    attribute(:person) do
+#      show!
+#      empty!
+#      attribute(:name) { show! }
+#    end
+#    attribute(:competition_pilots) do
+#       show!
+#       attribute(:competition) do
+#         show!
+#         empty!
+#         attribute(:name) { show! }
+#       end
+#       attribute(:cid_category) { show! }
+#    end
+#  end
+#
+#  filter :combo, lambda { |r|
+#    apply_search_to_relation(r, [ 'person.first_name', 'person.last_name' ])
+#  }
 
   def combo
     ext_combo do |x|
@@ -81,4 +91,5 @@ class Pilot::RestController < Ygg::Hel::RestController
 
 end
 
+end
 end

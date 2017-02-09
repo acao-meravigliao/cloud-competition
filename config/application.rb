@@ -28,25 +28,62 @@ module CloudComp
     config.assets.paths << File.join(Rails.root, 'app', 'assets', 'js')
     config.assets.paths << File.join(Rails.root, 'app', 'assets', 'css')
 
-    config.rails_amqp.url = 'amqp://agent@lino.acao.it'
-    config.rails_amqp.debug = 0
+    config.rails_amqp.debug = 1
 
     config.amqp_ws_gw.routes = {
     }
 
     config.amqp_ws_gw.allowed_request_origins = [
-#      'http://dev.yggdra.it:3000',
-#      'http://dev.yggdra.it:3001',
-#      'http://62.212.12.194:3001',
+      'https://cc.acao.it',
+      'http://linobis.acao.it:3000',
     ]
 
     config.extgui.page_title = 'Cc Admin'
     config.extgui.application = 'CcAdmin.Application'
-    config.extgui.routes.merge!({ 'CcAdmin' => 'CcAdmin' })
+    config.extgui.routes.merge!({ 'CcAdmin' => 'CcAdmin', 'Cc' => 'Cc' })
     config.extgui.default_theme = :neptune
     config.extgui.main_css = 'cc_admin.css'
     config.extgui.favicon = 'cc_admin/favicon.png'
 
+    config.extgui.menu_tree = {
+      cc: {
+        _node_: {
+          position: 20,
+          text: 'CloudCompetition',
+        },
+        flightss: {
+          _node_: {
+            text: 'Flights',
+            uri: 'model/ygg/cc/flights/',
+  #          icon: image_path('pec/mailbox-16x16.png'),
+          },
+        },
+        aircrafts: {
+          _node_: {
+            text: 'Aircrafts',
+            uri: 'model/ygg/cc/aircrafts/',
+          },
+        },
+        aircraft_types: {
+          _node_: {
+            text: 'Aircraft Types',
+            uri: 'model/ygg/cc/aircraft_types/',
+          },
+        },
+        pilots: {
+          _node_: {
+            text: 'Pilots',
+            uri: 'model/ygg/cc/pilots/',
+          },
+        },
+        clubss: {
+          _node_: {
+            text: 'Clubs',
+            uri: 'model/ygg/cc/clubs/',
+          },
+        },
+      },
+    }
   end
 end
 

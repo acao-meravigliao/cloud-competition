@@ -7,14 +7,14 @@
  *
  */
 
-Ext.define('Extgui.Cc.Club.IndexPanel', {
+Ext.define('Extgui.Ygg.Cc.Club.IndexPanel', {
   extend: 'Extgui.object.index.GridPanelBase',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Cc.Club',
+    'Extgui.Ygg.Cc.Plugin',
+    'Ygg.Cc.Club',
   ],
 
-  model: 'Cc.Club',
+  model: 'Ygg.Cc.Club',
   columns: [
    {
     dataIndex: 'symbol',

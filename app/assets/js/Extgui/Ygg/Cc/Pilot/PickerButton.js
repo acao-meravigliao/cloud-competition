@@ -7,12 +7,12 @@
  *
  */
 
-Ext.define('Extgui.Cc.Pilot.PickerButton', {
+Ext.define('Extgui.Ygg.Cc.Pilot.PickerButton', {
   extend: 'Extgui.object.PickerButton',
   alias: 'widget.cc_pilot_pickerbutton',
   requires: [
-    'Extgui.Cc.Pilot.Picker',
+    'Extgui.Ygg.Cc.Pilot.Picker',
   ],
 
-  pickerClass: 'Extgui.Cc.Pilot.Picker',
+  pickerClass: 'Extgui.Ygg.Cc.Pilot.Picker',
 });

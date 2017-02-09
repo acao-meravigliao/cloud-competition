@@ -6,13 +6,14 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class IgcTmpFile < ActiveRecord::Base
   self.table_name = 'cc_igc_tmp_files'
 
   belongs_to :pilot,
-             class_name: 'Cc::Pilot'
+             class_name: 'Ygg::Cc::Pilot'
 
   belongs_to :club
 
@@ -51,5 +52,5 @@ class IgcTmpFile < ActiveRecord::Base
   end
 end
 
-
+end
 end

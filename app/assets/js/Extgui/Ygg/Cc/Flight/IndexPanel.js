@@ -7,16 +7,16 @@
  *
  */
 
-Ext.define('Extgui.Cc.Flight.IndexPanel', {
+Ext.define('Extgui.Ygg.Cc.Flight.IndexPanel', {
   extend: 'Extgui.object.index.GridPanelBase',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Cc.Flight',
-    'Cc.Aircraft',
-    'Cc.AircraftType',
+    'Extgui.Ygg.Cc.Plugin',
+    'Ygg.Cc.Flight',
+    'Ygg.Cc.Aircraft',
+    'Ygg.Cc.AircraftType',
   ],
 
-  model: 'Cc.Flight',
+  model: 'Ygg.Cc.Flight',
   columns: [
    {
     xtype: 'datecolumn',

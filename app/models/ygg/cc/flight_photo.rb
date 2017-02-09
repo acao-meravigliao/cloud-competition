@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class FlightPhoto < Ygg::BasicModel
@@ -22,4 +23,5 @@ class FlightPhoto < Ygg::BasicModel
 
 end
 
+end
 end

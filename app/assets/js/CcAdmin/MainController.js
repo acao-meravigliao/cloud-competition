@@ -7,7 +7,7 @@
  *
  */
 
-Ext.define('AcaoDashboard.MainController', {
+Ext.define('CcAdmin.MainController', {
   extend: 'Extgui.fullgui.Controller',
   requires: [
   ],

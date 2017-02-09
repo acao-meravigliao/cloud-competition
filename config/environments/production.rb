@@ -74,4 +74,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.rails_amqp.url = 'amqp://cc@cc.acao.it'
+
+  config.extgui.compiled = true
+  config.extgui.compiled_stage1 = 'cc-stage1.js'
+  config.extgui.compiled_stage2 = 'cc-stage2.js'
+  config.extgui.ws_uri = lambda { "wss://#{request.host}/ws" }
 end

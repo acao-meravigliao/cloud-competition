@@ -7,12 +7,12 @@
  *
  */
 
-Ext.define('Extgui.Cc.AircraftType.PickerButton', {
+Ext.define('Extgui.Ygg.Cc.AircraftType.PickerButton', {
   extend: 'Extgui.object.PickerButton',
   alias: 'widget.cc_aircraft_type_pickerbutton',
   requires: [
-    'Extgui.Cc.AircraftType.Picker',
+    'Extgui.Ygg.Cc.AircraftType.Picker',
   ],
 
-  pickerClass: 'Extgui.Cc.AircraftType.Picker',
+  pickerClass: 'Extgui.Ygg.Cc.AircraftType.Picker',
 });

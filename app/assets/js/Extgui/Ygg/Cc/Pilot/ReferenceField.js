@@ -7,15 +7,15 @@
  *
  */
 
-Ext.define('Extgui.Cc.Pilot.ReferenceField', {
+Ext.define('Extgui.Ygg.Cc.Pilot.ReferenceField', {
   extend: 'Extgui.form.field.ReferenceField',
   requires: [
-    'Extgui.Cc.Plugin',
-    'Extgui.Cc.Pilot',
-    'Extgui.Cc.Pilot.Picker',
+    'Extgui.Ygg.Cc.Plugin',
+    'Extgui.Ygg.Cc.Pilot',
+    'Extgui.Ygg.Cc.Pilot.Picker',
   ],
   alias: 'widget.cc_pilot',
 
-  extguiObject: 'Extgui.Cc.Pilot',
-  pickerClass: 'Extgui.Cc.Pilot.Picker',
+  extguiObject: 'Extgui.Ygg.Cc.Pilot',
+  pickerClass: 'Extgui.Ygg.Cc.Pilot.Picker',
 });

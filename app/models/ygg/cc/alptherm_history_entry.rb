@@ -6,6 +6,7 @@
 # License:: You can redistribute it and/or modify it under the terms of the LICENSE file.
 #
 
+module Ygg
 module Cc
 
 class AlpthermHistoryEntry < Ygg::BasicModel
@@ -14,4 +15,5 @@ class AlpthermHistoryEntry < Ygg::BasicModel
   belongs_to :source, :class_name => "AlpthermSource"
 end
 
+end
 end
