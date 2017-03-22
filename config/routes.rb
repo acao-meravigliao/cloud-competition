@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   get 'admin', to: redirect('ygg/cc/admin')
 
+  root to: 'flights#index'
+
+  resources :flights do
+  end
+
+
   namespace :ygg do
   namespace :cc do
 

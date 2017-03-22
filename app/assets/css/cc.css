@@ -1,0 +1,591 @@
+
+body
+{
+ background-color: #fff;
+ color: #333;
+ margin: 0;
+ padding: 0;
+ font-family: verdana, arial, helvetica, sans-serif;
+ font-size: 8pt;
+ height: 100%;
+}
+
+html
+{
+ height: 100%;
+}
+
+a
+{
+ text-decoration: none;
+ color: #00f;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+img
+{
+  border: none;
+}
+
+div#header
+{
+ position: absolute;
+ top: 0;
+ left: 0;
+ margin: 0;
+ right: 0;
+ height: 4em;
+ background-color: #ddd;
+}
+
+div#header > div#text
+{
+ position: absolute;
+ padding: 0.3em;
+ top: 0px;
+ left: 0px;
+ font-size: 200%;
+ font-weight: bold;
+ text-shadow: white 0.1em 0.1em 0.1em;
+}
+
+div#header > div#right_text
+{
+ position: absolute;
+ top: 0px;
+ right: 0px;
+ padding: 0 1em 0 1em;
+}
+
+div#menu
+{
+ position: absolute;
+ margin: 0;
+ padding: 0;
+ width: 150px;
+ left: 0;
+ top: 4em;
+ bottom: 0;
+ padding-top: 1em;
+ background-color: #eee;
+}
+
+div#menu div.logo
+{
+ margin: 1em;
+ text-align: center;
+}
+
+div#menu ul
+{
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ padding-left: 1em;
+}
+
+div#menu > ul > li
+{
+ padding-bottom: 0.7em;
+}
+
+div#menu ul > li a:hover
+{
+ background-color: #faa;
+}
+
+div#menu div.userdata
+{
+ margin: 0em -0.5em 0em -0.5em;
+ border: solid 3px #aca;
+ padding: 0.5em;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+}
+
+div#menu div.userdata_authenticated
+{
+ background-color: #cfc;
+}
+
+div#menu div.userdata_admin
+{
+ background-color: #f22;
+}
+
+div#body
+{
+ position: absolute;
+ left: 150px;
+ right: 0;
+ top: 4em;
+ bottom: 10px;
+}
+
+div.body_contents
+{
+ padding: 0.7em;
+}
+
+div.errorExplanation
+{
+ background-color: #fdd;
+ border: solid 3px #ecc;
+ padding: 1em;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+}
+
+div.autocomplete {
+  width: 350px;
+  background: #fff;
+}
+div.autocomplete ul {
+  border:1px solid #888;
+  margin:0;
+  padding:0;
+  width:100%;
+  list-style-type: none;
+}
+div.autocomplete ul li {
+  margin:0;
+  padding:3px;
+}
+div.autocomplete ul li.selected {
+  background-color: #ffb;
+}
+div.autocomplete ul strong.highlight {
+  color: #800; 
+  margin:0;
+  padding:0;
+}
+
+div.map_container
+{
+ background-color: #eee;
+ margin-bottom: 1em; 
+ padding: 5px;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+}
+
+div.flight_photos_box
+{
+ background-color: #eee;
+ margin-bottom: 1em;
+ padding: 5px;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+}
+
+div.box
+{
+ background-color: #eee;
+ margin-bottom: 1em;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+ margin: 0.7em;
+}
+
+table.standard
+{
+ padding: 5px;
+}
+table.standard > caption {  } 
+table.standard > tbody > tr { background-color: #ddd; }
+table.standard > tbody > tr > th { padding: 0.1em 0.5em 0.1em 0.5em; text-align: left; }
+table.standard > tbody > tr > td { padding: 0.1em 0.5em 0.1em 0.5em; }
+table.standard > tbody > tr > td.name { text-align: left; } 
+table.standard > tbody > tr > td.count { text-align: right; } 
+
+table.ranking
+{
+}
+
+table.ranking > caption
+{
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+}
+
+table.ranking > caption > span.generated_at
+{
+ font-size: 75%;
+}
+
+table.ranking { }
+table.ranking > tbody > tr > td.number { text-align: right; }
+table.ranking > tbody > tr > td.pending a { color: #eef; }
+
+
+table.cir_spd_ranking > tbody > tr > td
+{
+ cursor: hand;
+}
+
+table.cir_spd_ranking > tbody > tr > td:hover
+{
+ background-color: #f99;
+}
+
+table.cir_speed > tbody > tr.record
+{
+ background-color: #ff0;
+}
+
+table.approvals > tbody > tr > th
+{
+ text-align: left;
+ font-weight: normal;
+}
+
+div.flight_info_cut_body
+{
+ width: 350px;
+}
+
+div.flight_info { display: inline-block; vertical-align: top; }
+
+table.flight_info { }
+table.flights { }
+table.flights > tbody > tr > td.rankings
+{
+ margin: 0;
+ padding: 0 5px 0 5px;
+}
+
+table.flights > tbody > tr > td.downloadicons
+{
+ margin: 0;
+ padding: 0 5px 0 5px;
+}
+
+table.pilots {  }
+table.pilot { }
+table.planes { }
+table.plane_types { }
+
+table.junior > caption { background-color: #cfc; }
+table.expert > caption { background-color: #ccf; }
+table.master > caption { background-color: #fcc; }
+
+table.flight_calendar
+{
+ display: inline-block;
+ vertical-align: top;
+}
+
+table.flight_calendar > tbody > tr > td
+{
+ vertical-align: top;
+ height: 2em;
+}
+
+table.flight_calendar > tbody > tr > td > span.dom
+{
+ font-size: 50%;
+ vertical-align: top;
+ margin-left: -1em;
+ margin-top: -0.5em;
+ margin-right: 0.5em;
+}
+
+table.flight_calendar > tbody > tr > td > span.cnt
+{
+ vertical-align: top;
+ font-weight: bold;
+}
+
+table.flight_calendar > tbody > tr > td.empty
+{
+ background-color: #eee;
+}
+
+table.flight_calendar > tbody > tr > th
+{
+ background-color: #9c9;
+}
+
+table.flight_calendar > tbody > tr > td.d5
+{
+ background-color: #ebb;
+}
+
+table.flight_calendar > tbody > tr > td.d6
+{
+ background-color: #ebb;
+}
+
+table.flight_calendar > tbody > tr > td.today
+{
+ border: solid 3px red;
+}
+
+.icon-pending { background-image: url('../images/flight_status_pending.png') !important; }
+.icon-approved { background-image: url('../images/flight_status_approved.png') !important; }
+
+div.edit_box
+{
+ position: absolute;
+ right: 1em;
+ top: 1em;
+ background-color: #fdd;
+ border: solid 3px #ecc;
+ padding: 1em;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+}
+
+.msg .x-box-mc {
+    font-size:14px;
+}
+#msg-div {
+    position:absolute;
+    left:35%;
+    top:10px;
+    width:250px;
+    z-index:20000;
+}
+
+div.menulogin
+{
+ background-color: #cfc;
+ border: solid 3px #aca;
+ padding: 1em;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+}
+
+div.menulogin input
+{
+ font-size: 80%;
+}
+
+div#login_div
+{
+ position: relative;
+ float: left;
+ z-index: 1;
+}
+
+form.standard
+{
+ background-color: #cfc;
+ border: solid 3px #aca;
+ padding: 1em;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+}
+
+form#send_flight_form
+{
+}
+
+table.form { }
+table.form td.submit
+{
+ text-align: center;
+}
+
+div#new_plane_div
+{
+}
+
+div#new_plane_type_div
+{
+}
+
+div#photo_geotagging_select_div
+{
+ background-color: #cfc;
+ border: solid 3px #aca;
+ padding: 1em;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+}
+
+img.cf_status_icon_pending
+{
+ opacity: 0.5;
+}
+
+img.cf_status_icon_invalid
+{
+ background-color: #f77;
+}
+
+p.success,
+p.notice,
+p.warning,
+p.error {
+  font-size: 18px;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+}
+
+p.success span,
+p.notice span,
+p.warning span,
+p.error span {
+  float: left;
+  width: 42px;
+  height: 32px;
+  margin-top: -5px;
+}
+
+p.success {
+  background: url(../../images/flash/success-bg.jpg) repeat-x left top;
+  color: #41612f;
+}
+p.success span {
+  background: url(../../images/flash/success.png) no-repeat left top;
+}
+
+p.notice {
+  background: url(../../images/flash/notice-bg.jpg) repeat-x left top;
+  color: #41612f;
+}
+p.notice span {
+  background: url(../../images/flash/notice.png) no-repeat left top;
+}
+
+p.warning {
+  background: url(../../images/flash/warning-bg.jpg) repeat-x left -10px;
+  color: #a26a1a;
+}
+p.warning span {
+  margin-top: -6px;
+  background: url(../../images/flash/warning.png) no-repeat left top;
+}
+
+p.error {
+  background: url(../../images/flash/error-bg.jpg) repeat-x left -10px;
+  color: #af0100;
+}
+p.error span {
+  margin-top: -6px;
+  background: url(../../images/flash/error.png) no-repeat left top;
+}
+
+div.cf
+{
+ vertical-align: top;
+ display: inline-block;
+ background-color: #eee;
+ margin: 0.7em;
+ padding: 0.7em;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+border: solid 1px green;
+}
+
+div.cf_wide
+{
+ width: 90%;
+}
+
+div.cf > div.logo
+{
+ text-align: center;
+ display: inline-block;
+ vertical-align: top;
+}
+
+div.cf > div.container
+{
+ display: inline-block;
+ vertical-align: top;
+}
+
+div.cf > div.container > div.title
+{
+ font-weight: bold;
+}
+
+
+div.cp
+{
+ vertical-align: top;
+ display: inline-block;
+ background-color: #eee;
+ padding: 1em;
+ -webkit-border-radius: 8px;    /* for Safari */
+ -moz-border-radius: 8px;       /* for Firefox */
+ border-radius: 8px;
+
+border: solid 1px green;
+}
+
+div.cp > div.logo
+{
+ text-align: center;
+ display: inline-block;
+ vertical-align: top;
+}
+
+div.cp > div.container
+{
+ display: inline-block;
+ vertical-align: top;
+}
+
+div.cp > div.container > div.title
+{
+ font-weight: bold;
+}
+
+div#upload_dialog_map
+{
+ position: absolute;
+ right: 10px;
+ top: 10px;
+ width: 355px;
+ height: 200px;
+}
+
+iframe#upload_dialog_iframe
+{
+ position: absolute;
+ right: 10px;
+ top: 220px;
+ width: 355px;
+ height: 300px;
+ border: none;
+ background-color: #eee;
+}
+
+span.ac_p_reg
+{
+ display: inline-block;
+ font-size: 150%;
+ font-weight: bold;
+ font-family: monospace;
+ width: 5em;
+}
+
+td.points { text-align: right; }
+td.total_points { font-weight: bold; }
+
+div.flight_notes {}
+div.flight_notes > div.contents
+{
+  font-size: 80%;
+  min-height: 2em;
+  background-color: #ddd;
+}

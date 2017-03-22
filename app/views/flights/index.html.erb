@@ -1,0 +1,9 @@
+<div class="body_contents">
+<% date_constraints = [ params[:day], params[:month], params[:year] ].delete_if { |x| x.nil? } %>
+
+<% if date_constraints %>
+  <h1>Voli del <%=h date_constraints.join '/' %></h1>
+<% end %>
+
+<%= render :partial => 'flights', :object => @targets, :locals => { :options => {} } %>
+</div>

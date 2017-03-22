@@ -13,13 +13,20 @@ gem 'pry'
 gem 'pry-rails'
 gem 'awesome_print'
 
-gem 'puma', '~> 3.7'
+gem 'puma'
 gem 'puma-plugin-systemd'
 
 gem 'geocoder'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
+
+
+
+gem 'polymer-rails'
+
+
+
 
 group :assets do
   gem 'sass-rails', '~> 5.0'
@@ -51,9 +58,9 @@ end
 gem 'json_exceptions', path: '../yggdra/plugins/json_exceptions'
 gem 'vihai-password-rails', path: '../yggdra/plugins/vihai_password_rails'
 
-gem 'yggdra_plugins', path: '../yggdra/plugins/yggdra_plugins'
 gem 'hel', path: '../yggdra/plugins/hel'
 
+gem 'rails_actor_model', path: '../yggdra/plugins/rails_actor_model'
 gem 'rails_amqp', path: '../yggdra/plugins/rails_amqp'
 gem 'amqp_ws_gw', path: '../yggdra/plugins/amqp_ws_gw'
 
