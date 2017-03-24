@@ -1,0 +1,29 @@
+
+<dom-module id="clv-flights">
+  <template>
+    <style>
+    </style>
+
+<iron-ajax
+    auto
+    url="/pippo.html"
+    handle-as="html"
+    on-response="handleResponse"></iron-ajax>
+  </template>
+
+  <script>
+    // Define the element's API using an ES2015 class
+    class ClvFlights extends Polymer.Element {
+
+      static get is() { return 'clv-flights'; }
+
+      handleResponse(data) {
+        console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO", data);
+      }
+    }
+
+    // Register the x-custom element with the browser
+    customElements.define(ClvFlights.is, ClvFlights);
+  </script>
+
+</dom-module>

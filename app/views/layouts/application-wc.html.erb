@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Campionato Luigi Villa</title>
+
+<!--    <link rel="icon" href="/images/favicon.ico">-->
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#3f51b5">
+
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="application-name" content="CLV">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CLV">
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="/images/manifest/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/manifest/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="/images/manifest/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/manifest/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/manifest/icon-192x192.png">
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <meta name="keywords" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'webcomponentsjs/webcomponents-lite' %>
+
+    <%=
+# stylesheet_link_tag    'cc', media: 'all'
+ %>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        line-height: 1.5;
+        min-height: 100vh;
+        background-color: #eeeeee;
+      }
+    </style>
+
+    <script>
+/*
+(function() {
+  'use strict';
+
+  var srcs = {
+    'ce-es5':    '<%= asset_path('webcomponentsjs/webcomponents-ce-es5')%>',
+    'hi-ce-es5': '<%= asset_path('webcomponentsjs/webcomponents-hi-ce-es5')%>',
+    'hi-ce':     '<%= asset_path('webcomponentsjs/webcomponents-hi-ce')%>',
+    'hi':        '<%= asset_path('webcomponentsjs/webcomponents-hi')%>',
+    'hi-sd-ce':  '<%= asset_path('webcomponentsjs/webcomponents-hi-sd-ce')%>',
+    'lite':      '<%= asset_path('webcomponentsjs/webcomponents-lite')%>',
+    'sd-ce':     '<%= asset_path('webcomponentsjs/webcomponents-sd-ce')%>',
+  };
+
+  // Feature detect which polyfill needs to be imported.
+  var polyfills = [];
+  if (!('import' in document.createElement('link'))) {
+    polyfills.push('hi');
+  }
+  if (!('attachShadow' in Element.prototype && 'getRootNode' in Element.prototype) ||
+    (window.ShadyDOM && window.ShadyDOM.force)) {
+    polyfills.push('sd');
+  }
+  if (!window.customElements || window.customElements.forcePolyfill) {
+    polyfills.push('ce');
+  }
+  if (!('content' in document.createElement('template')) || !window.Promise ||
+    // Edge has broken fragment cloning which means you cannot clone template.content
+    !(document.createDocumentFragment().cloneNode() instanceof DocumentFragment)) {
+    polyfills.push('pf');
+  }
+
+  if (polyfills.length === 4) { // hi-ce-sd-pf is actually called lite.
+    polyfills = ['lite'];
+  }
+
+  if (polyfills.length) {
+    var newScript = document.createElement('script');
+
+    newScript.src = srcs[polyfills.join('-')];
+    newScript.async = false;
+    document.head.appendChild(newScript);
+  } else {
+    // Ensure `WebComponentsReady` is fired also when there are no polyfills loaded.
+    requestAnimationFrame(function() {
+      window.dispatchEvent(new CustomEvent('WebComponentsReady'));
+    });
+  }
+})();
+*/
+    </script>
+
+    <%= html_import_tag 'application' %>
+  </head>
+
+  <body>
+    <my-app></my-app>
+    <%=
+# yield
+ %>
+  </body>
+</html>

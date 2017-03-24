@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'flights#index'
 
+  get 'rankings' => 'flights#index'
+
   resources :flights do
   end
 

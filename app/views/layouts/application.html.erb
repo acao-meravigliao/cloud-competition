@@ -42,62 +42,7 @@
 
     <%= stylesheet_link_tag    'cc', media: 'all' %>
 
-    <script>
-/*
-(function() {
-  'use strict';
-
-  var srcs = {
-    'ce-es5':    '<%= asset_path('webcomponentsjs/webcomponents-ce-es5')%>',
-    'hi-ce-es5': '<%= asset_path('webcomponentsjs/webcomponents-hi-ce-es5')%>',
-    'hi-ce':     '<%= asset_path('webcomponentsjs/webcomponents-hi-ce')%>',
-    'hi':        '<%= asset_path('webcomponentsjs/webcomponents-hi')%>',
-    'hi-sd-ce':  '<%= asset_path('webcomponentsjs/webcomponents-hi-sd-ce')%>',
-    'lite':      '<%= asset_path('webcomponentsjs/webcomponents-lite')%>',
-    'sd-ce':     '<%= asset_path('webcomponentsjs/webcomponents-sd-ce')%>',
-  };
-
-  // Feature detect which polyfill needs to be imported.
-  var polyfills = [];
-  if (!('import' in document.createElement('link'))) {
-    polyfills.push('hi');
-  }
-  if (!('attachShadow' in Element.prototype && 'getRootNode' in Element.prototype) ||
-    (window.ShadyDOM && window.ShadyDOM.force)) {
-    polyfills.push('sd');
-  }
-  if (!window.customElements || window.customElements.forcePolyfill) {
-    polyfills.push('ce');
-  }
-  if (!('content' in document.createElement('template')) || !window.Promise ||
-    // Edge has broken fragment cloning which means you cannot clone template.content
-    !(document.createDocumentFragment().cloneNode() instanceof DocumentFragment)) {
-    polyfills.push('pf');
-  }
-
-  if (polyfills.length === 4) { // hi-ce-sd-pf is actually called lite.
-    polyfills = ['lite'];
-  }
-
-  if (polyfills.length) {
-    var newScript = document.createElement('script');
-
-    newScript.src = srcs[polyfills.join('-')];
-    newScript.async = false;
-    document.head.appendChild(newScript);
-  } else {
-    // Ensure `WebComponentsReady` is fired also when there are no polyfills loaded.
-    requestAnimationFrame(function() {
-      window.dispatchEvent(new CustomEvent('WebComponentsReady'));
-    });
-  }
-})();
-*/
-
     </script>
-
-    <%= html_import_tag 'polymer/polymer' %>
-
   </head>
 
   <body>

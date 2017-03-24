@@ -1,0 +1,37 @@
+
+<dom-module id="clv-rankings">
+  <template>
+    <style>
+    </style>
+
+    <div>dsuuuuufsdfsdf</div> <!-- data bindings in local DOM -->
+  </template>
+
+  <script>
+    // Define the element's API using an ES2015 class
+    class ClvRankings extends Polymer.Element {
+
+      static get is() { return 'clv-rankings'; }
+
+      // Declare properties for the element's public API
+      static get properties() {
+        return {
+          greeting: {
+            type: String,
+            value: "Hello!"
+          }
+        }
+      }
+
+      // Add methods to the element's public API
+      greetMe() {
+        console.log(this.greeting);
+      }
+
+    }
+
+    // Register the x-custom element with the browser
+    customElements.define(ClvRankings.is, ClvRankings);
+  </script>
+
+</dom-module>
